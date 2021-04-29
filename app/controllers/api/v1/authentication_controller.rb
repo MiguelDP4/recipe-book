@@ -9,6 +9,10 @@ class Api::V1::AuthenticationController < ApiController
       render json: { errors: 'invalid' }
     end
   end
+  def destroy
+    sign_out(current_user)
+    render json: { info: 'signed out' }
+  end
   def fetch
     render json: current_user
   end

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
       get 'post/index'
       post :auth, to: 'authentication#create'
       get  '/auth' => 'authentication#fetch'
+      get '/logout' => 'authentication#destroy'
     end
     namespace :v2 do
       # Things yet to come
